@@ -187,9 +187,9 @@ version: '2'
     - variable: MYSQL_PASS
       label: MYSQL_PASS
       description: MySQL Password for 411
-      type: s13M0nSterV3
+      type: password
       required: true
-      default: siemonster
+      default: s13M0nSterV3
     - variable: MYSQL_ROOT_PASSWORD
       label: MYSQL_ROOT_PASSWORD
       description: MySQL Root Password
