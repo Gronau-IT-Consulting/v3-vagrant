@@ -51,7 +51,6 @@ services:
       ELASTICSEARCH_USER: elastic
       ELASTICSEARCH_PASSWORD: ${ELASTIC_PWD}
       ELASTICSEARCH_HOST: es-client-2
-      ELASTIC_PWD: ${ELASTIC_PWD}
     stdin_open: true
     tty: true
     volumes:
@@ -103,7 +102,7 @@ services:
     tty: true
     tmpfs: /run
     labels:
-      io.rancher.scheduler.affinity:host_label: capricorn=1
+      io.rancher.scheduler.affinity:host_label: makara=1
       io.rancher.container.hostname_override: container_name
       io.rancher.container.pull_image: always
   es-data-node2-volume:
@@ -137,7 +136,7 @@ services:
     stdin_open: true
     tty: true
     labels:
-      io.rancher.scheduler.affinity:host_label: capricorn=1
+      io.rancher.scheduler.affinity:host_label: makara=1
       io.rancher.container.hostname_override: container_name
       io.rancher.container.pull_image: always
   es-client-2:
@@ -374,11 +373,10 @@ services:
     labels:
       io.rancher.container.pull_image: always
       io.rancher.container.hostname_override: container_name
-      io.rancher.scheduler.affinity:host_label_soft_ne: kraken=1,tiamat=1,makara=1
+      io.rancher.scheduler.affinity:host_label_soft_ne: kraken=1,tiamat=1
     environment:
       - "KIBANA_PWD=${KIBANA_PWD}"
       - "ELASTIC_PWD=${ELASTIC_PWD}"
-      - "WAZUH_API_PWD=${WAZUH_API_PWD}"
     volumes:
       - es-config:/usr/share/elasticsearch/config:ro
       - kibana-config:/etc/kibana
@@ -806,12 +804,12 @@ services:
     depends_on:
       - es-master
     labels:
-      io.rancher.scheduler.affinity:host_label: makara=1
+      io.rancher.scheduler.affinity:host_label: proteus=1
   syslog-ng:
     labels:
       io.rancher.container.pull_image: always
       io.rancher.container.hostname_override: container_name
-      io.rancher.scheduler.affinity:host_label: capricorn=1
+      io.rancher.scheduler.affinity:host_label: proteus=1
     tty: true
     depends_on:
       - rabbitmq
@@ -828,7 +826,7 @@ services:
     stdin_open: true
     tty: true
     labels:
-      io.rancher.scheduler.affinity:host_label: capricorn=1
+      io.rancher.scheduler.affinity:host_label: makara=1
       io.rancher.container.hostname_override: container_name
       io.rancher.container.pull_image: always
     environment:
@@ -853,7 +851,7 @@ services:
       - reports:/data/reports
       - reports_config:/opt/skedler/config
     labels:
-      io.rancher.scheduler.affinity:host_label_soft_ne: kraken=1,tiamat=1,makara=1
+      io.rancher.scheduler.affinity:host_label_soft_ne: kraken=1,tiamat=1
       io.rancher.container.hostname_override: container_name
       io.rancher.container.pull_image: always
   siem-lb:
