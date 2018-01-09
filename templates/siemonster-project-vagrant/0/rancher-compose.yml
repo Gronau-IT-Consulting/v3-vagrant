@@ -30,7 +30,7 @@ version: '2'
       required: true
       label: "Grafana Password"
       description: "Set the Grafana Password"
-      default: "s13M0nSterV3"
+      default: "admin"
       
     - variable: "MONGODB_USER"
       type: "string"
@@ -44,7 +44,7 @@ version: '2'
       required: true
       label: "Web Application Mongo Password"
       description: "Set the Mongo Password"
-      default: "s13M0nSterV3"
+      default: "siemonsterv3"
       
     - variable: "MONGODB_DATABASE"
       type: "string"
@@ -79,14 +79,14 @@ version: '2'
       required: true
       label: "RabbitMQ Admin Password"
       description: "Set the RabbitMQ Password"
-      default: "s13M0nSterV3"
+      default: "admin"
       
     - variable: "WAZUH_API_PWD"
       type: "password"
       required: true
       label: "Wazuh API Password"
       description: "Set the Wazuh API Password"
-      default: "s13M0nSterV3"
+      default: "changeme"
 
     - variable: "MASTER_HEAP_SIZE"
       type: "string"
@@ -114,49 +114,49 @@ version: '2'
       required: true
       label: "CA Password"
       description: "Set the Cert Auth Password"
-      default: "s13M0nSterV3"
+      default: "changeme"
 
     - variable: "TS_PWD"
       type: "password"
       required: true
       label: "Truststore Password"
       description: "Set the Truststore Password"
-      default: "s13M0nSterV3"
+      default: "changeme"
       
     - variable: "KS_PWD"
       type: "password"
       required: true
       label: "Keystore Password"
       description: "Set the Keystore Password"
-      default: "s13M0nSterV3"
+      default: "changeme"
 
     - variable: "ELASTIC_PWD"
       type: "password"
       required: true
       label: "ES Password"
       description: "Set Elastic Password"
-      default: "s13M0nSterV3"
+      default: "changeme"
 
     - variable: "KIBANA_PWD"
       type: "password"
       required: true
       label: "Kibana Password"
       description: "Set the Kibana Password"
-      default: "s13M0nSterV3"
+      default: "changeme"
 
     - variable: "LOGSTASH_PWD"
       type: "password"
       required: true
       label: "Logstash Password"
       description: "Set the Logstash Password"
-      default: "s13M0nSterV3"
+      default: "changeme"
 
     - variable: "BEATS_PWD"
       type: "password"
       required: true
       label: "Beats Password"
       description: "Set the Beats Password"
-      default: "s13M0nSterV3"
+      default: "changeme"
 
     - variable: "SKEDLER_USER"
       type: "password"
@@ -170,7 +170,7 @@ version: '2'
       required: true
       label: "Skedler Password"
       description: "Set the Skedler Password for the Elasticsearch connection"
-      default: "s13M0nSterV3"
+      default: "changeme"
     
     - variable: MYSQL_DATABASE
       label: MYSQL_DATABASE
@@ -189,13 +189,13 @@ version: '2'
       description: MySQL Password for 411
       type: password
       required: true
-      default: s13M0nSterV3
+      default: siemonster
     - variable: MYSQL_ROOT_PASSWORD
       label: MYSQL_ROOT_PASSWORD
       description: MySQL Root Password
       type: password
       required: true
-      default: s13M0nSterV3
+      default: siemonster
     - variable: SITE_ID
       label: SITE_ID
       description: SITE_ID for 411
