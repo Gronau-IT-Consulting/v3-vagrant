@@ -100,7 +100,7 @@ version: '2'
       required: true
       label: "Heap size (data nodes)"
       description: "Heap size to be allocated for Java (mater nodes)"
-      default: "2g"
+      default: "4g"
 
     - variable: "CLIENT_HEAP_SIZE"
       type: "string"
