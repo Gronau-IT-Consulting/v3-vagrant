@@ -781,6 +781,15 @@ services:
       RABBITMQ_USER: ${RABBITMQ_USER}
       RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD}
     stdin_open: true
+    ports:
+    - 3520:3520
+    - 3521:3521
+    - 3522:3522
+    - 3524:3524
+    - 3525:3525
+    - 3526:3526
+    - 3527:3527
+    - 3528:3528
     volumes:
     - logstash-collector:/etc/logstash/conf.d
     tty: true
