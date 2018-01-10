@@ -49,7 +49,7 @@ services:
     image: ikuturso/elastalert:v3
     environment:
       ELASTICSEARCH_USER: elastic
-      ELASTICSEARCH_PASSWORD: ${ELASTIC_PWD}
+      ELASTIC_PWD: ${ELASTIC_PWD}
       ELASTICSEARCH_HOST: es-client-2
     stdin_open: true
     tty: true
@@ -377,6 +377,7 @@ services:
     environment:
       - "KIBANA_PWD=${KIBANA_PWD}"
       - "ELASTIC_PWD=${ELASTIC_PWD}"
+      - "WAZUH_API_PWD=${WAZUH_API_PWD}"
     volumes:
       - es-config:/usr/share/elasticsearch/config:ro
       - kibana-config:/etc/kibana
