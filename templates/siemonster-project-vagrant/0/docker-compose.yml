@@ -140,7 +140,7 @@ services:
   es-client-2:
     cap_add:
     - IPC_LOCK
-    image: ikuturso/es-image:3.2
+    image: ikuturso/es-image:3.3
     environment:
       CA_PWD: ${CA_PWD}
       CLUSTER_NAME: siemonster
@@ -172,7 +172,7 @@ services:
   es-data-node1:
     cap_add:
     - IPC_LOCK
-    image: ikuturso/es-image:3.2
+    image: ikuturso/es-image:3.3
     environment:
       CA_PWD: ${CA_PWD}
       CLUSTER_NAME: siemonster
@@ -202,7 +202,7 @@ services:
   es-client-1:
     cap_add:
     - IPC_LOCK
-    image: ikuturso/es-image:3.2
+    image: ikuturso/es-image:3.3
     environment:
       CA_PWD: ${CA_PWD}
       CLUSTER_NAME: siemonster
@@ -234,7 +234,7 @@ services:
   es-master:
     cap_add:
     - IPC_LOCK
-    image: ikuturso/es-image:3.2
+    image: ikuturso/es-image:3.3
     hostname: es-master
     environment:
       BEATS_PWD: ${BEATS_PWD}
@@ -278,7 +278,7 @@ services:
   es-data-node2:
     cap_add:
     - IPC_LOCK
-    image: ikuturso/es-image:3.2
+    image: ikuturso/es-image:3.3
     environment:
       CA_PWD: ${CA_PWD}
       CLUSTER_NAME: siemonster
@@ -773,7 +773,7 @@ services:
       io.rancher.container.pull_image: always
       io.rancher.service.wait_for_healthcheck: true
   logstash-collector:
-    image: ikuturso/logstash-collector:1.0
+    image: ikuturso/logstash-collector:1.3
     environment:
       HEAP_SIZE: "1g"
       RABBITMQ_USER: ${RABBITMQ_USER}
@@ -821,6 +821,9 @@ services:
     tty: true
     depends_on:
       - rabbitmq
+    environment:
+      RABBITMQ_USER: ${RABBITMQ_USER}
+      RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD}
     volumes:
     - syslog-ng:/etc/syslog-ng
     ports:
@@ -828,7 +831,7 @@ services:
     - 514:514
     - 1516:1516/udp
     - 1516:1516
-    image: ikuturso/syslog-ng
+    image: ikuturso/syslog-ng:1.0
   rabbitmq:
     image: ikuturso/rabbitmq
     stdin_open: true
